@@ -83,6 +83,18 @@ app.post('/item', async function (req, res) {
   res.send('Item atualizado com sucesso!')
  })
 
+ //Delete -> [DELETE] /item/:id
+ app.delete('/item/:id', async function (req, res) {
+  //pegamos o Id da rota
+  const id = req.params.id
+  
+  // realizamos a operação DELETE
+  await collection.deleteOne({_id: new ObjectId(id) })
+
+  // enviamos uma mensagem de sucesso
+  res.send('Item removido com sucesso!')
+ })
+
 
 
 app.listen(3000)
