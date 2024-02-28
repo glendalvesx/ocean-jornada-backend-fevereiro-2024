@@ -1,7 +1,8 @@
+require('dotenv').config()
 const express = require('express')
 const { MongoClient, ObjectId } = require ('mongodb')
 
-const dbUrl = 'mongodb+srv://admin:eyrruoghFAaR7qYu@cluster0.bbuxfsz.mongodb.net'
+const dbUrl = process.env.DATABASE_URL
 const dbName = 'OceanJornadaBackendFev2024'
 
 async function main(){
